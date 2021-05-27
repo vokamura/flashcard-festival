@@ -9,9 +9,11 @@ function App() {
         <h1>
           This is a flashcards app.
         </h1>
-        <CardLayout />
       
       </header>
+      <div className="flashBody">
+        <CardLayout />
+      </div>
     </div>
   );
 }

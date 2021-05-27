@@ -1,30 +1,33 @@
 import React, { Component } from 'react';
 import CardBuild from './CardBuild.js';
+import data from './data.json';
 
 class CardLayout extends Component {
   constructor(props){
       super(props);
       this.state = {
-          cardCount: [1, 2, 3, 4, 5, 6],
-          isClicked: false
+          cardCount: 0,
+          isClicked: false,
+          cardData: []
       }
       this.showCards = this.showCards.bind(this);
   }
 
   showCards(e){
-      console.log(e);
-      this.setState({ isClicked: true });
-
+    // console.log(e);
+    // console.log(data);
+    // console.log(Object.keys(data).length);
+    this.setState({ isClicked: true });
+    this.setState({ cardCount: Object.keys(data).length });
+    this.setState({ cardData: data });
   }
 
     render(){
-        let { cardCount, isClicked } = this.state;
-        
+        let { cardCount, isClicked,cardData } = this.state;
         return(
             <div>
-                <div>Hello</div>
-                <button onClick={this.showCards}>Click me to show cards</button>
-                <CardBuild cardCount={cardCount} isClicked={isClicked}/>
+                <button onClick={this.showCards}>Show Deck</button>
+                <CardBuild cardCount={cardCount} cardData={cardData} isClicked={isClicked}/>
             </div>
         );
     }

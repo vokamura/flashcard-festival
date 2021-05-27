@@ -6,6 +6,7 @@ $show-element: block;
 
 .showElement {
     display: $show-element;
+    margin: 5vh;
 }
 
 .hideElement {
@@ -17,6 +18,11 @@ h1 {
     font-family: $font-stack;
     text-align: center;
     font-size: 56px;
+}
+
+.flashBody {
+    display: flex;
+    justify-content: center;
 }
 
 .cardContainer {
@@ -31,4 +37,8 @@ h1 {
     height: 100px;
     width: 50px;
     display: inline-block;
+}
+
+button {
+    margin: 5vh;
 }

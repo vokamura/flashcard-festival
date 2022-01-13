@@ -25,18 +25,28 @@ h1 {
     justify-content: center;
 }
 
+.board {
+    position: relative;
+}
+
 .cardContainer {
     display: flex;
-    border: $card-border;
     width: 70vw;
-    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px black solid;
 }
 
 .card {
     border: $card-border;
-    height: 100px;
-    width: 50px;
-    display: inline-block;
+    height: 150px;
+    width: 300px;
+    margin: 1vh;
+    text-align: center;
+}
+
+.cardBack {
+    position:absolute;
+    top: 12vh;
 }
 
 button {

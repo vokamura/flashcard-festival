@@ -1,16 +1,17 @@
 [
     {
-        "flashNum": 1,
         "front": "How to say 1 in French",
         "back": "Un"
     },
     {
-        "flashNum": 2,
         "front": "How to say 1 in Japanese?",
         "back": "Ichi"
     },
     {
-        "flashNum": 3,
+        "front": "How to say 1 in Spanish?",
+        "back": "Uno"
+    },
+    {
         "front": "How to say 1 in Spanish?",
         "back": "Uno"
     }

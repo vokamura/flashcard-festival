@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const CardBuildFront = (props) => {
 
     let addFrontCards = [];
@@ -11,20 +12,28 @@ const CardBuildFront = (props) => {
 
     //console.log(addCards);
 
+    // function cardClick(e){
+    //     console.log(e.target);
+    //     console.log("A card was clicked");
+    // }
+
+
+    const showClass = props.isClicked ? "showElement" : "hideElement";
+    const flipClass = props.cardClicked ? "hideElement" : "showElement";
+
     const listCards = addFrontCards.map((e, index) =>
         <div 
-            className="card"
+            className={`${flipClass} card`}
             key={index}
             id={index}
+            onClick={props.activeCard}
         >
             <p>{e.front}</p>
         </div>
     );
 
-    const showClass = props.isClicked ? "showElement" : "hideElement";
-
     return( 
-        <div className={`${showClass} cardContainer`}>
+        <div className={`${showClass} cardContainer cardFront`}>
             {listCards}
         </div>
     );

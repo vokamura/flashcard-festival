@@ -1,0 +1,22 @@
+[
+    {
+        "cardID": 1,
+        "front": "How to say 1 in French",
+        "back": "Un"
+    },
+    {
+        "cardID": 2,
+        "front": "How to say 1 in Japanese?",
+        "back": "Ichi"
+    },
+    {
+        "cardID": 3,
+        "front": "How to say 1 in Spanish?",
+        "back": "Uno"
+    },
+    {
+        "cardID": 4,
+        "front": "How to say 1 in Korean?",
+        "back": "il"
+    }
+]

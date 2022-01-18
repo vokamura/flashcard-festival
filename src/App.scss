@@ -1,0 +1,64 @@
+$font-color: grey;
+$font-stack: Helvetica, sans-serif;
+$card-border: 1px solid black;
+$hide-element: none;
+$show-element: block;
+
+.showElement {
+    display: $show-element;
+    margin: 5vh;
+}
+
+.hideElement {
+    display: $hide-element;
+}
+
+h1 {
+    color: $font-color;
+    font-family: $font-stack;
+    text-align: center;
+    font-size: 56px;
+}
+
+p {
+    pointer-events: none;
+}
+
+.flashBody {
+    display: flex;
+    //justify-content: center;
+}
+
+.board {
+    position: relative;
+}
+
+.cardContainer {
+    display: flex;
+    width: 70vw;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.card {
+    border: $card-border;
+    height: 150px;
+    width: 300px;
+    margin: 1vh;
+    text-align: center;
+}
+
+button {
+    margin: 5vh;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flip {
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+
+}

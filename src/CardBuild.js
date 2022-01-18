@@ -19,8 +19,6 @@ const AllCardBuild = (props) => {
         }
     }
 
-    const showClass = props.isClicked ? "showElement" : "hideElement";
-
     const showCards = addCards.map((e, index) => 
         <div 
             className="card" key={index}

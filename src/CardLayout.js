@@ -8,21 +8,33 @@ class CardLayout extends Component {
       this.state = {
           isClicked: false,
           cardData: [],
+          showBoard: true
       }
       this.showCards = this.showCards.bind(this);
+      this.resetCards = this.resetCards.bind(this);
   }
 
   showCards(){
-    this.setState({ isClicked: true });
-    this.setState({ cardData: data });
+    this.setState({ 
+        isClicked: true, 
+        cardData: data,
+        showBoard: true
+    });
   }
+
+
+  resetCards(){
+      console.log("Card reset");
+      this.setState({ showBoard: false });
+    }
 
     render(){
         let { isClicked, cardData } = this.state;
         return(
-            <div className="board"> 
+            <div id="board"> 
                 <button onClick={this.showCards}>Show All Cards</button>
-                <AllCardBuild cardData={cardData} isClicked={isClicked}/>
+                <button onClick={this.resetCards}>Reset Cards</button>
+                {this.state.showBoard ? <AllCardBuild cardData={cardData} isClicked={isClicked}/> : null}
             </div>
         );
     }

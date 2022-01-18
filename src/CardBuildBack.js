@@ -22,7 +22,6 @@ const CardBuildBack = (props) => {
             key={index}
             id={index}
             onClick={cardClick}
-
         >
             <p>{e.back}</p>
         </div>

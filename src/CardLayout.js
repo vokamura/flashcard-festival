@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardBuildFront from './CardBuildFront.js';
 import CardBuildBack from './CardBuildBack.js';
+import CardBuild from './CardBuild.js';
 import data from './data.json';
 
 class CardLayout extends Component {
@@ -25,7 +26,8 @@ class CardLayout extends Component {
       this.setState({ cardClicked: true }, () => {
         if(this.state.cardClicked === true){
             console.log("This is clicked");
-          }
+          } 
+
       });
   }
 
@@ -34,11 +36,13 @@ class CardLayout extends Component {
         return(
             <div className="board"> 
                 <button onClick={this.showCards}>Show Deck</button>
-                <CardBuildFront cardData={cardData} isClicked={isClicked} cardClicked={cardClicked} activeCard={() => {this.activeCard()}}/>
-                <CardBuildBack cardData={cardData} isClicked={isClicked} />
+
             </div>
         );
     }
 }
 
 export default CardLayout;
+
+{/* <CardBuildFront cardData={cardData} isClicked={isClicked} cardClicked={cardClicked} activeCard={() => {this.activeCard()}}/>
+<CardBuildBack cardData={cardData} isClicked={isClicked} /> */}

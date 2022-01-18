@@ -11,9 +11,7 @@ function App() {
         </h1>
       
       </header>
-      <div className="flashBody">
         <CardLayout />
-      </div>
     </div>
   );
 }

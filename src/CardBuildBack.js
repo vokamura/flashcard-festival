@@ -11,11 +11,17 @@ const CardBuildBack = (props) => {
 
     //console.log(addCards);
 
+    function cardClick(e){
+        console.log(e.target);
+        console.log("Back was clicked");
+    }
+    
     const listCards = addBackCards.map((e, index) =>
         <div 
             className="card"
             key={index}
             id={index}
+            onClick={cardClick}
         >
             <p>{e.back}</p>
         </div>
@@ -23,12 +29,12 @@ const CardBuildBack = (props) => {
 
     const showClass = props.isClicked ? "showElement" : "hideElement";
 
-
     return( 
-        <div className={`${showClass} cardContainer cardBack`}>
+        <div className={`${showClass} cardContainer`}>
             {listCards}
         </div>
     );
 }
 
 export default CardBuildBack;
+

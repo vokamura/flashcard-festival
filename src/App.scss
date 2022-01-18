@@ -22,7 +22,7 @@ h1 {
 
 .flashBody {
     display: flex;
-    justify-content: center;
+    //justify-content: center;
 }
 
 .board {
@@ -33,7 +33,7 @@ h1 {
     display: flex;
     width: 70vw;
     flex-wrap: wrap;
-    border: 1px black solid;
+    //justify-content: space-around;
 }
 
 .card {
@@ -44,11 +44,17 @@ h1 {
     text-align: center;
 }
 
-.cardBack {
+.cardFront {
     position:absolute;
     top: 12vh;
+    //background-color: pink;
 }
 
 button {
     margin: 5vh;
+}
+
+.flip {
+    transform: rotateY(180deg);
+
 }

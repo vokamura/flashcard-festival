@@ -27,6 +27,7 @@ class CardLayout extends Component {
         if(this.state.cardClicked === true){
             console.log("This is clicked");
           } 
+
       });
   }
 
@@ -35,9 +36,7 @@ class CardLayout extends Component {
         return(
             <div className="board"> 
                 <button onClick={this.showCards}>Show Deck</button>
-                <div className="cardContainer">
-                    <CardBuild cardData={cardData} isClicked={isClicked} cardClicked={cardClicked} activeCard={() => {this.activeCard()}}/>
-                </div>
+
             </div>
         );
     }

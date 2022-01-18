@@ -12,7 +12,7 @@ const CardBuildFront = (props) => {
 
     //console.log(addCards);
 
-    function cardClick(e){
+  function cardClick(e){
         console.log(e.target);
         console.log("A card was clicked");
         e.preventDefault();
@@ -33,6 +33,7 @@ const CardBuildFront = (props) => {
             id={index}
             //onClick={props.activeCard}
             onClick={cardClick}
+
         >
             <p>{e.front}</p>
         </div>

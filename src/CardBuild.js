@@ -1,62 +1,55 @@
 import React from 'react';
 
 
-const CardBuild = (props) => {
-
-    //let addCards = [];
+const AllCardBuild = (props) => {
 
     let addCards = props.cardData.map((e) => {
-        //console.log(e);
         return Object.assign(e);
     });
 
     //console.log(addCards);
 
     function cardClick(e){
-        console.log(e.target);
-        console.log("A card was clicked");
-        e.preventDefault();
-        //e.target.style.display = "none";
-        e.target.innerHTML = "hello";
-        e.target.classList.add("flip");
+        e.stopPropagation();
+        console.log(e.target.childNodes[0]);
+        console.log("ID card clicked is: ", e.currentTarget.id);
+        if(e.target.childNodes[0].classList.contains("front")) {
+            e.target.childNodes[0].classList.remove("showElement");
+            e.target.childNodes[0].classList.add("hideElement");
+            e.target.childNodes[1].classList.add("showElement");
+            e.target.childNodes[1].classList.remove("hideElement");
+        }
     }
 
 
     const showClass = props.isClicked ? "showElement" : "hideElement";
     //const flipClass = props.cardClicked ? "hideElement" : "showElement";
 
-    const showFront = addCards.map((e, index) =>
+    const showCards = addCards.map((e, index) => 
         <div 
-            //className={`${flipClass} card`}
-            className={`showElement card front`}
-            key={index}
+            className="card" key={index}
+            onClick={(e) => cardClick(e)}
             id={index}
-            //onClick={props.activeCard}
-            onClick={cardClick}
         >
-            <p>{e.front}</p>
+            <div
+                className="front showElement"
+                onClick={(e) => e.stopPropagation()}
+                >
+                <p>{e.front}</p>
+            </div>
+            <div
+                className="back hideElement"
+                >
+                <p>{e.back}</p>
+            </div>
         </div>
     );
 
-    const showBack = addCards.map((e, index) =>
-    <div 
-        className="card back"
-        key={index}
-        id={index}
-        onClick={cardClick}
-    >
-        <p>{e.back}</p>
-    </div>
-);
-
     return( 
-        <div className={`${showClass} cardFront`}>
-            <div>
-                {showFront}
-                {showBack}
-            </div>
+        <div className={`${showClass} cardContainer`}>
+            {showCards}
         </div>
     );
 }
 
-export default CardBuild;
+export default AllCardBuild;

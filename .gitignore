@@ -47,4 +47,6 @@ psd
 thumb
 sketch
 
+node_modules/.cache/.eslintcache
+
 # End of https://www.toptal.com/developers/gitignore/api/react,macos

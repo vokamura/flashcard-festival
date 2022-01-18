@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardBuildFront from './CardBuildFront.js';
 import CardBuildBack from './CardBuildBack.js';
+import CardBuild from './CardBuild.js';
 import data from './data.json';
 
 class CardLayout extends Component {
@@ -8,27 +9,41 @@ class CardLayout extends Component {
       super(props);
       this.state = {
           isClicked: false,
-          cardData: []
+          cardData: [],
+          cardClicked: false
       }
       this.showCards = this.showCards.bind(this);
   }
 
-  showCards(e){
-    //console.log(Object.keys(data).length);
+  showCards(){
     this.setState({ isClicked: true });
     this.setState({ cardData: data });
+    //console.log(this.state.cardData);
+  }
+
+  activeCard(){
+      console.log("Front card clicked");
+      this.setState({ cardClicked: true }, () => {
+        if(this.state.cardClicked === true){
+            console.log("This is clicked");
+          } 
+      });
   }
 
     render(){
-        let { isClicked,cardData } = this.state;
+        let { isClicked, cardData, cardClicked } = this.state;
         return(
-            <div className="board">
+            <div className="board"> 
                 <button onClick={this.showCards}>Show Deck</button>
-                <CardBuildFront cardData={cardData} isClicked={isClicked}/>
-                <CardBuildBack cardData={cardData} isClicked={isClicked}/>
+                <div className="cardContainer">
+                    <CardBuild cardData={cardData} isClicked={isClicked} cardClicked={cardClicked} activeCard={() => {this.activeCard()}}/>
+                </div>
             </div>
         );
     }
 }
 
 export default CardLayout;
+
+{/* <CardBuildFront cardData={cardData} isClicked={isClicked} cardClicked={cardClicked} activeCard={() => {this.activeCard()}}/>
+<CardBuildBack cardData={cardData} isClicked={isClicked} /> */}

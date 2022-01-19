@@ -15,9 +15,22 @@ class CardLayout extends Component {
   }
 
   showCards(){
+    const randomData = [];
+    
+    console.log(data);
+
+    //randomize card layour
+    while(data.length){
+        let randomCard = Math.floor(Math.random() * data.length);
+        randomData.push(data[randomCard]);
+        data.splice(randomCard, 1);
+    }
+
+    console.log(randomData);
+
     this.setState({ 
         isClicked: true, 
-        cardData: data,
+        cardData: randomData,
         showBoard: true
     });
   }

@@ -4,6 +4,27 @@ $card-border: 1px solid black;
 $hide-element: none;
 $show-element: block;
 
+hr {
+    width: 90vw;
+}
+
+.buttonMenu {
+    display:flex;
+    justify-content: space-around;
+}
+
+.menuButtons {
+    margin: 1vh;
+    border-radius: 10px;
+    color: white;
+    background-color: cornflowerblue;
+    height: 3vh;
+    width: 15vw;
+    font-weight: bolder;
+    border-top: none;
+    border-left: none;
+}
+
 .showElement {
     display: $show-element;
     margin: 5vh;
@@ -44,12 +65,9 @@ p {
     width: 300px;
     margin: 1vh;
     text-align: center;
+    border-radius: 15px;
     //display:flex;
     //align-items: stretch;
-}
-
-button {
-    margin: 5vh;
 }
 
 .back {

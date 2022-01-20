@@ -8,37 +8,41 @@ class CardLayout extends Component {
       this.state = {
           isClicked: false,
           cardData: [],
-          showBoard: true
+          showBoard: false
       }
       this.showCards = this.showCards.bind(this);
       this.resetCards = this.resetCards.bind(this);
   }
 
   showCards(){
-    const randomData = [];
+    let randomData = [];
+    let setData = data;
     
-    console.log(data);
-
-    //randomize card layour
-    while(data.length){
-        let randomCard = Math.floor(Math.random() * data.length);
-        randomData.push(data[randomCard]);
-        data.splice(randomCard, 1);
+    if(data.length === 0){
+        setData = this.state.cardData;
     }
 
-    console.log(randomData);
-
-    this.setState({ 
-        isClicked: true, 
-        cardData: randomData,
-        showBoard: true
-    });
+    //shows board if it's not showing
+    if(this.state.showBoard === false) {
+        //randomize cards
+        while(setData.length){
+            let randomCard = Math.floor(Math.random() * setData.length);
+            randomData.push(setData[randomCard]);
+            setData.splice(randomCard, 1);
+        }
+    
+        this.setState({ 
+            isClicked: true, 
+            cardData: randomData,
+            showBoard: true
+        });
+    };
   }
 
-
   resetCards(){
-      console.log("Card reset");
-      this.setState({ showBoard: false });
+      console.log(this.state.cardData);
+      this.setState({ showBoard: false});
+      console.log(this.state);
     }
 
     render(){

@@ -22,11 +22,7 @@ h1 {
 
 p {
     pointer-events: none;
-}
-
-.flashBody {
-    display: flex;
-    //justify-content: center;
+    font-weight: bold;
 }
 
 #id {
@@ -35,18 +31,21 @@ p {
 
 .cardContainer {
     display: flex;
-    width: 70vw;
+    width: 90vw;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: auto;
 }
 
 .card {
-    border: $card-border;
+    //border: $card-border;
+    border: 3px solid red;
     height: 150px;
     width: 300px;
     margin: 1vh;
     text-align: center;
+    //display:flex;
+    //align-items: stretch;
 }
 
 button {
@@ -60,5 +59,8 @@ button {
 .flip {
     transform: rotateY(180deg);
     transition: transform 0.5s;
+}
 
+.card.flip {
+    border: 3px solid blue;
 }

@@ -39,10 +39,12 @@ class CardLayout extends Component {
     };
   }
 
+  showDeck(){
+      console.log("Show cards in a deck");
+  }
+
   resetCards(){
-      console.log(this.state.cardData);
       this.setState({ showBoard: false});
-      console.log(this.state);
     }
 
     render(){
@@ -50,6 +52,7 @@ class CardLayout extends Component {
         return(
             <div id="board"> 
                 <button onClick={this.showCards}>Show All Cards</button>
+                <button onClick={this.showDeck}>Show Deck</button>
                 <button onClick={this.resetCards}>Reset Cards</button>
                 {this.state.showBoard ? <AllCardBuild cardData={cardData} isClicked={isClicked}/> : null}
             </div>

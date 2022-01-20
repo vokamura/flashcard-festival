@@ -9,7 +9,6 @@ const AllCardBuild = (props) => {
     function cardClick(e){
         //e.stopPropagation();
         //console.log(e.target.childNodes[0]);
-        console.log("ID card clicked is: ", e.currentTarget);
         if(e.target.childNodes[0].classList.contains("front")) {
             e.target.childNodes[0].classList.remove("showElement");
             e.target.childNodes[0].classList.add("hideElement");

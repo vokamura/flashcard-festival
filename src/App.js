@@ -9,7 +9,7 @@ function App() {
         <h1>
           This is a flashcards app.
         </h1>
-      
+        <hr></hr>
       </header>
         <CardLayout />
     </div>

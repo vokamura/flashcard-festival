@@ -51,9 +51,12 @@ class CardLayout extends Component {
         let { isClicked, cardData } = this.state;
         return(
             <div id="board"> 
-                <button onClick={this.showCards}>Show All Cards</button>
-                <button onClick={this.showDeck}>Show Deck</button>
-                <button onClick={this.resetCards}>Reset Cards</button>
+                <div className="buttonMenu">
+                    <button className="menuButtons" onClick={this.showCards}>Show All Cards</button>
+                    <button className="menuButtons" onClick={this.showDeck}>Show Deck</button>
+                    <button className="menuButtons" onClick={this.resetCards}>Reset Cards</button>
+                </div>
+                <hr></hr>
                 {this.state.showBoard ? <AllCardBuild cardData={cardData} isClicked={isClicked}/> : null}
             </div>
         );

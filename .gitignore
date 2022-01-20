@@ -49,6 +49,9 @@ sketch
 
 node_modules/.cache/.eslintcache
 
+gitfile
+gitfile.pub
+
 
 # End of https://www.toptal.com/developers/gitignore/api/react,macos
 node_modules

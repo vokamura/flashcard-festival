@@ -1,4 +1,6 @@
 import React from 'react';
+import thumbsUp from './assets/thumbs-up.png';
+import thumbsDown from './assets/thumbs-down.png';
 
 const AllCardBuild = (props) => {
 
@@ -25,6 +27,15 @@ const AllCardBuild = (props) => {
         }
     }
 
+    function clickUp(e){
+        console.log("do something", e.target);
+        e.target.parentNode.parentNode.classList.add("hideElement");
+    }
+
+    function clickDown(){
+        console.log("do something else");
+    }
+
     const showCards = addCards.map((e, index) => 
         <div 
             className="card" key={index}
@@ -43,6 +54,8 @@ const AllCardBuild = (props) => {
                 onClick={(e) => e.stopPropagation()}
             >
                 <p className="text">{e.back}</p>
+                <img src={thumbsUp} className="thumbsUp" onClick={(e) => clickUp(e)}></img>
+                <img src={thumbsDown} className="thumbsDown" onClick={(e) => clickDown()}></img>
             </div>
         </div>
     );

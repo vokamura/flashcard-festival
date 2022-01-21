@@ -4,6 +4,9 @@ $card-border: 1px solid black;
 $hide-element: none;
 $show-element: block;
 
+//<a href="https://www.flaticon.com/free-icons/thumbs-down" title="thumbs down icons">Thumbs down icons created by Secret Studio - Flaticon</a>
+//<a href="https://www.flaticon.com/free-icons/thumbs-down" title="thumbs down icons">Thumbs down icons created by NajmunNahar - Flaticon</a>
+
 hr {
     width: 90vw;
 }
@@ -23,6 +26,10 @@ hr {
     font-weight: bolder;
     border-top: none;
     border-left: none;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .showElement {
@@ -83,4 +90,22 @@ p {
 
 .card.flip {
     border: 3px solid blue;
+}
+
+.thumbsUp {
+    height: 30px;
+    width: 30px;
+    //background-color: green;
+    position: relative;
+    left: -105px;
+    bottom: -25px;
+}
+
+.thumbsDown {
+    height: 30px;
+    width: 30px;
+    //background-color: red;
+    position: relative;
+    left: 105px;
+    bottom: -20px;
 }

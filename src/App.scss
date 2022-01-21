@@ -1,5 +1,5 @@
-$font-color: grey;
-$font-stack: Helvetica, sans-serif;
+$font-color: #565656;
+$font-stack: Verdana, Helvetica, sans-serif;
 $card-border: 1px solid black;
 $hide-element: none;
 $show-element: block;
@@ -55,7 +55,7 @@ p {
     width: 90vw;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: auto;
+    margin: 5vh auto;
 }
 
 .card {
@@ -66,6 +66,8 @@ p {
     margin: 1vh;
     text-align: center;
     border-radius: 15px;
+    font-family: $font-stack;
+    color: $font-color;
     //display:flex;
     //align-items: stretch;
 }

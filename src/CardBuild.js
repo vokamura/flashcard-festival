@@ -7,14 +7,21 @@ const AllCardBuild = (props) => {
     });
 
     function cardClick(e){
-        //e.stopPropagation();
-        //console.log(e.target.childNodes[0]);
+
+        //if the card is clicked...
         if(e.target.childNodes[0].classList.contains("front")) {
             e.target.childNodes[0].classList.remove("showElement");
             e.target.childNodes[0].classList.add("hideElement");
             e.target.classList.add("flip");
             e.target.childNodes[1].classList.add("showElement");
             e.target.childNodes[1].classList.remove("hideElement");
+        //if the text is clicked...
+        } else if (e.target.classList.contains("front")){
+            e.target.classList.remove("showElement");
+            e.target.classList.add("hideElement");
+            e.target.parentNode.classList.add("flip");
+            e.target.parentNode.childNodes[1].classList.add("showElement");
+            e.target.parentNode.childNodes[1].classList.remove("hideElement");
         }
     }
 
@@ -26,14 +33,16 @@ const AllCardBuild = (props) => {
         >
             <div
                 className="front showElement"
-                onClick={(e) => e.stopPropagation()}
-                >
-                <p>{e.front}</p>
+            >
+                <p className="text"
+                    onClick={(e) => e.stopPropagation()}
+                >{e.front}</p>
             </div>
             <div
                 className="back hideElement"
-                >
-                <p>{e.back}</p>
+                onClick={(e) => e.stopPropagation()}
+            >
+                <p className="text">{e.back}</p>
             </div>
         </div>
     );

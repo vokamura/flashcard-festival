@@ -32,8 +32,13 @@ const AllCardBuild = (props) => {
         e.target.parentNode.parentNode.classList.add("hideElement");
     }
 
-    function clickDown(){
-        console.log("do something else");
+    function clickDown(e){
+        console.log(e.target);
+        e.target.parentNode.classList.add("hideElement");
+        e.target.parentNode.classList.remove("showElement");
+        e.target.parentNode.parentNode.childNodes[0].classList.add("flip");
+        e.target.parentNode.parentNode.childNodes[0].classList.add("showElement");
+        e.target.parentNode.parentNode.childNodes[0].classList.remove("hideElement");
     }
 
     const showCards = addCards.map((e, index) => 
@@ -54,8 +59,8 @@ const AllCardBuild = (props) => {
                 onClick={(e) => e.stopPropagation()}
             >
                 <p className="text">{e.back}</p>
-                <img src={thumbsUp} className="thumbsUp" onClick={(e) => clickUp(e)}></img>
-                <img src={thumbsDown} className="thumbsDown" onClick={(e) => clickDown()}></img>
+                <img src={thumbsUp} className="thumbsUp" onClick={(e) => clickUp(e)} alt="thumbs up icon"></img>
+                <img src={thumbsDown} className="thumbsDown" onClick={(e) => clickDown(e)} alt="thumbd down icon"></img>
             </div>
         </div>
     );
